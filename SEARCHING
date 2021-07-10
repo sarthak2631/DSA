@@ -1,0 +1,36 @@
+// LINEAR SEARCH 
+
+// output is the position at which the key is found
+
+#include <stdio.h>
+
+int linearSearch(int n,int a[],int k)
+{
+   int i;
+   for(i=0;i<n;i++)
+   {
+       if(a[i]==k)
+       return i;
+   }
+   return -1;
+}
+
+int main()
+{
+    int n,a[1000],k,p,i;
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    scanf("%d",&k);
+    
+    p=linearSearch(n,a,k);
+    printf("%d",p);
+    return 0;
+}
+
+
+//BINARY SEARCH (without RECURSION)
+
+
