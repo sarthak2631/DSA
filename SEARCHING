@@ -31,6 +31,75 @@ int main()
 }
 
 
-//BINARY SEARCH (without RECURSION)
+//BINARY SEARCH (without RECURSION)  array is sorted
+
+#include <stdio.h>
+
+int binarySearch(int n,int a[],int k)
+{
+   int low=0;
+   int high=n-1;
+   int mid;
+   
+   while(low<=high)
+   {
+       
+       
+       if(a[mid]==k)
+       {
+       return mid;
+       }
+       if(a[mid]<k)
+       {
+       low=mid+1;
+       }
+       else
+       {
+       high=mid-1;
+       }
+       
+       mid=(low+high)/2;
+   }
+   return -1;
+}
+
+int main()
+{
+    int n,a[1000],k,p,i;
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    scanf("%d",&k);
+    
+    p=binarySearch(n,a,k);
+    printf("%d",p);
+    return 0;
+}
 
 
+//BINARY SEARCH (using RECURSION)  array is sorted
+
+
+int binarySearch(int a[],int low,int high,int k)
+{
+   low=0;
+   high=n-1;
+   int mid;
+   
+    if(low>high)
+       return 0;
+       
+    mid=(low+high)/2; 
+    
+       if(a[mid]==k)
+       return mid;
+       
+       if(a[mid]<k)
+       binarySearch(a,mid+1,high,k);
+    
+       else
+       binarySearch(a,low,mid-1,k);
+       
+}
